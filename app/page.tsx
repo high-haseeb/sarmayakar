@@ -7,6 +7,7 @@ export default function Home() {
       <SideMenu />
       <video
         src={"/videos/bg.mp4"}
+        muted
         autoPlay
         loop
         className="w-screen h-screen absolute top-0 left-0 object-cover -z-10"
