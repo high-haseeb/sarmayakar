@@ -7,8 +7,10 @@ import Link from "next/link";
 const Navbar = () => {
   const { open } = useStateStore();
   return (
-    <div className="absolute top-0 left-0 w-screen overflow-hidden">
+    <div className="absolute top-0 left-0 w-screen overflow-hidden text-lg font-sans font-normal">
       <div className="flex items-center justify-between py-4 px-4">
+
+        <button onClick={() => open()}>Menu</button>
         <Link href={"/"}>
           <Image
             src={"/logos/logo.png"}
@@ -19,14 +21,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <Image
-          onClick={() => open()}
-          src={"/icons/menu.svg"}
-          width={360}
-          height={240}
-          alt="menu"
-          className="object-cover w-10 cursor-pointer"
-        />
+        <div>Inquire</div>
       </div>
     </div>
   );
