@@ -10,7 +10,12 @@ const config: Config = {
     extend: {
       fontFamily: {
         'nexa' : [ 'nexa' ],
-      }
+        'nexaLight' : [ 'nexa-light' ],
+      },
+      colors: {
+        brGold : '#DCB95F',
+        brBlue: '#0B72B7',
+      },
     },
   },
   plugins: [],
