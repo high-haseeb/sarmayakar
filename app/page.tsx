@@ -1,6 +1,9 @@
-
+import Navbar from "@/components/common/Navbar"
 export default function Home() {
   return (
-    <div>Hello, Sarmayakar</div>
+    <>
+      <Navbar />
+      <div className="text-4xl font-bold">YOUR TRUSTED REAL ESTATE PARTNERS</div>
+    </>
   );
 }
