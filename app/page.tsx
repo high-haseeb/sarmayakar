@@ -1,9 +1,12 @@
-import Navbar from "@/components/common/Navbar"
+import Hero from "@/components/home/sections/Hero";
+import { NextUIProvider } from "@nextui-org/react";
+
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <div className="text-4xl font-bold">YOUR TRUSTED REAL ESTATE PARTNERS</div>
-    </>
+    <NextUIProvider>
+      <div className="parent">
+        <Hero />
+      </div>
+    </NextUIProvider>
   );
 }
