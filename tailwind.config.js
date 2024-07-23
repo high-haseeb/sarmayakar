@@ -6,7 +6,7 @@ const config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    './node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js'
+    "./node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js",
   ],
   theme: {
     extend: {
@@ -34,7 +34,26 @@ const config = {
       },
     },
     darkMode: "class",
-    plugins: [nextui()],
+    plugins: [
+      nextui({
+        addCommonColors: true,
+        defaultTheme: "dark",
+        themes: {
+          light: {
+            colors: {
+              primary: "#0B72B7",
+              default: "#0B72B7",
+            },
+          },
+          dark: {
+            colors: {
+              primary: "#0B72B7",
+              default: "#0B72B7",
+            },
+          },
+        },
+      }),
+    ],
   },
 };
 export default config;

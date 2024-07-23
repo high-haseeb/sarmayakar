@@ -1,12 +1,14 @@
 import Hero from "@/components/home/sections/Hero";
+import Services from "@/components/home/sections/Services";
 import { NextUIProvider } from "@nextui-org/react";
 
 export default function Home() {
   return (
     <NextUIProvider>
-      <div className="parent">
+      <main className="parent dark">
         <Hero />
-      </div>
+      <Services/>
+      </main>
     </NextUIProvider>
   );
 }
