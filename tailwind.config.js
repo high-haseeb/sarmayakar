@@ -19,10 +19,15 @@ const config = {
           "0%": { transform: "translateY(50px)" },
           "100%": { transform: "translateY(0)" },
         },
+        scroll: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         expandWidth: "expandWidth 1s ease-in-out forwards",
         fadeInUp: "fadeInUp 0.7s ease-out forwards",
+        scroll: 'scroll 4s linear infinite',
       },
       fontFamily: {
         nexa: ["nexa"],

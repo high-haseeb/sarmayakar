@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
 import DotGround from "./DotGround";
 
 const Services = () => {
+  const [open, setOpen] = useState("");
   return (
     <div className="w-screen h-screen bg-black overflow-hidden relative section z-30">
       <div className="w-full h-full text-white px-8 lg:px-10 py-16 flex items-center justify-start  relative flex-col gap-10 z-50">
@@ -22,6 +23,7 @@ const Services = () => {
             content={
               "Discover prime properties with Sermayakar. Explore residential havens and lucrative investments tailored to your goals. Find your perfect property today."
             }
+            close={[open, setOpen]}
           />
 
           <ServiceCard
@@ -30,6 +32,7 @@ const Services = () => {
             content={
               "Selling your property is seamless with Sermayakar. Our experts ensure a smooth, profitable sale, maximizing returns with personalized service. Trust us with your real estate investment."
             }
+            close={[open, setOpen]}
           />
 
           <ServiceCard
@@ -38,6 +41,7 @@ const Services = () => {
             content={
               "Explore rental possibilities with Sermayakar. Find cozy residences or commercial spaces with quality amenities and convenience. Let us guide you to the perfect rental property, tailored to your needs."
             }
+            close={[open, setOpen]}
           />
         </div>
       </div>
@@ -45,13 +49,17 @@ const Services = () => {
     </div>
   );
 };
-const ServiceCard = ({ imageSrc, title, content }) => {
+const ServiceCard = ({ imageSrc, title, content, close }) => {
   const [show, setShow] = useState(false);
+  const [open, setOpen] = close;
+  useEffect(() => {
+    open !== title && setShow(false);
+  }, [open]);
   return (
     <Card
       isPressable
-      className="p-4 bg-white/20 backdrop-blur rounded-3xl"
-      onClick={() => setShow((state) => !state)}
+      className="p-4 bg-black/80 backdrop-blur rounded-3xl"
+      onClick={() => {setShow((state) => !state); setOpen(title)}}
     >
       <CardHeader className="items-center flex-col">
         <div className="flex gap-4 items-center justify-center ">
