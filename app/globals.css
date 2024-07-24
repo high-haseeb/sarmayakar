@@ -24,6 +24,42 @@
 
 @tailwind utilities;
 
+
+
+
+.move {
+  animation: moveY 2s ease-in-out forwards; 
+}
+
+.move2 {
+  animation: moveY2 2s ease-in-out forwards; 
+}
+
+/* Animation for img1 */
+@keyframes moveY {
+  from {
+    transform: translateY(0) translateX(-55%); 
+  }
+  to {
+    transform: translateY(68%) translateX(-80%); 
+  }
+}
+
+/* Animation for img2 */
+@keyframes moveY2 {
+  from {
+    transform: translateY(-40%) translateX(65%); 
+  }
+  to {
+    transform: translateY(-100%) translateX(65%); 
+  }
+}
+
+
+
+
+
+
 @keyframes move1 {
   0%, 100% {
     transform: translate(0, 0) scale(1);
@@ -120,7 +156,6 @@
   }
 }
 
-/* StarField.css */
 .star-field {
   position: absolute;
   top: 0;
@@ -128,7 +163,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: black; /* Background color for the star field */
+  background: black; 
 }
 
 .star {
