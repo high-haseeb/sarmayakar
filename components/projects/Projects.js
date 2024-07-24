@@ -2,13 +2,13 @@
 import "./style.css"
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
-import pic1 from "../../public/images/assets/WhatsApp Image 2024-07-10 at 2.14.32 PM.jpeg"
+import pic1 from "../../public/images/assets/one.jpeg"
 import pic2 from "../../public/images/pearlTower/front.jpg"
 import pic3 from "../../public/images/pearlTower/side.jpeg"
 import pic4 from "../../public/images/pearlTower/side.jpeg"
 import pic5 from "../../public/images/pearlTower/front.jpg"
 import pic6 from "../../public/images/bahria/town.jpg"
-import pic7 from "../../public/images/assets/WhatsApp Image 2024-07-10 at 2.16.11 PM.jpeg"
+import pic7 from "../../public/images/assets/two.jpeg"
 
 import { useScroll, useTransform,motion } from "framer-motion";
 import ContactCard from '../ZoomParallax/Perallex'
