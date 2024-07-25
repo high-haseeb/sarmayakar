@@ -20,7 +20,6 @@ const Excellence = () => {
         <br />
         <span className="bg-clip-text text-transparent bg-gradient-to-t from-blue-400 to-blue-600 z-10">real estate</span>
       </div>
-      {/* Radial gradient for the container to give a faded look */}
 
       <div className="flex flex-col items-center justify-center gap-4">
         <Stats title={"Property Sold"} target={500} plus icon={"up"} />
