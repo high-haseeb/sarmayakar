@@ -23,11 +23,30 @@ const config = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        slideLeft: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-25%)" },
+        },
+        slideUp: {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(0%)" },
+        },
+        draw: {
+          "0%": {
+            strokeDasharray: "0, var(--path-length)",
+          },
+          "100%": {
+            strokeDasharray: "var(--path-length), var(--path-length)",
+          },
+        },
       },
       animation: {
         expandWidth: "expandWidth 1s ease-in-out forwards",
         fadeInUp: "fadeInUp 0.7s ease-out forwards",
-        scroll: 'scroll 4s linear infinite',
+        scroll: "scroll 4s linear infinite",
+        slideLeft: "slideLeft 1s ease-in-out forwards",
+        slideUp: "slideUp 1s ease-out forwards",
+        draw: 'draw 2s ease-in-out forwards',
       },
       fontFamily: {
         nexa: ["nexa"],
