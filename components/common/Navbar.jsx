@@ -10,8 +10,8 @@ const Navbar = () => {
   const router = useRouter();
 
   const handleNavigation = (path) => {
-    setSideMenuOpen(false); // Close the menu when navigating
     router.push(path);
+    setSideMenuOpen(false);
   };
 
   return (

@@ -2,18 +2,19 @@
 import { useEffect, useState } from "react";
 import { Button, Card, CardHeader, Image } from "@nextui-org/react";
 import DotGround from "./DotGround";
+import AnimatedText from "@/components/common/AnimatedText";
 
 const Services = () => {
-  const [open, setOpen] = useState("");
+  const [open, setOpen] = useState("Offer property");
   return (
-    <div className="w-screen h-screen bg-black overflow-hidden relative section z-30">
+    <div className="w-screen h-screen bg-black overflow-hidden relative section z-10  pt-10">
       <div className="w-full h-full text-white px-8 lg:px-10 py-16 flex items-center justify-start  relative flex-col gap-10 z-50">
         <div className="text-4xl text-white font-bold">
           <span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-t from-blue-400 to-blue-600">
-              Services
-            </span>{" "}
-            We Offer
+            <AnimatedText>
+              <span className="bg-clip-text text-transparent bg-gradient-to-t from-blue-400 to-blue-600">Services</span>
+            </AnimatedText>
+            <AnimatedText>we offer</AnimatedText>
           </span>
         </div>
         <div className="flex flex-col gap-4">
@@ -50,7 +51,7 @@ const Services = () => {
   );
 };
 const ServiceCard = ({ imageSrc, title, content, close }) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [open, setOpen] = close;
   useEffect(() => {
     open !== title && setShow(false);
@@ -59,24 +60,19 @@ const ServiceCard = ({ imageSrc, title, content, close }) => {
     <Card
       isPressable
       className="p-4 bg-black/80 backdrop-blur rounded-3xl"
-      onClick={() => {setShow((state) => !state); setOpen(title)}}
+      onClick={() => {
+        setShow((state) => !state);
+        setOpen(title);
+      }}
     >
       <CardHeader className="items-center flex-col">
         <div className="flex gap-4 items-center justify-center ">
-          <Image
-            alt="nextui logo"
-            height={40}
-            radius="sm"
-            src={imageSrc}
-            width={40}
-          />
+          <Image alt="nextui logo" height={40} radius="sm" src={imageSrc} width={40} />
           <p className="text-lg uppercase font-semibold">{title}</p>
         </div>
-        <div
-          className={`transition-all ${show ? "max-h-80 opacity-100 mt-5" : "max-h-0 opacity-0 mt-0"} text-sm flex flex-col gap-5`}
-        >
+        <div className={`transition-all ${show ? "max-h-80 opacity-100 mt-5" : "max-h-0 opacity-0 mt-0"} text-sm flex flex-col gap-5`}>
           {content}
-          <Button className="bg-blue-500 rounded-2xl">learn more</Button>
+          <Button className="bg-blue-200 rounded-2xl font-semibold text-black">learn more</Button>
         </div>
       </CardHeader>
     </Card>

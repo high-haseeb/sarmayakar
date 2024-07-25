@@ -3,20 +3,20 @@ import React from "react";
 import Blobs from "./Blob/Blob.jsx";
 import { Button } from "@nextui-org/button";
 import { useRouter } from "next/navigation";
+import AnimatedText from "@/components/common/AnimatedText.jsx";
 
 const AboutUs = () => {
   const router = useRouter();
   return (
-    <div className="w-screen h-screen overflow-hidden text-white px-8 lg:px-10 py-16 flex items-start justify-between section relative flex-col backdrop-blur ">
-      <div className="text-4xl text-white font-bold">
-        About
-        <br />
-        <span className="bg-clip-text text-transparent bg-gradient-to-t from-blue-400 to-blue-600">
+    <div className="w-screen h-screen overflow-hidden text-white px-8 lg:px-10 py-24 flex items-start justify-between section relative flex-col backdrop-blur ">
+      <div className="text-4xl text-white font-semibold">
+        <AnimatedText>About</AnimatedText>
+        <AnimatedText><span className="bg-clip-text text-transparent bg-gradient-to-t from-blue-400 to-blue-600">
           Sermayakar
-        </span>
+        </span></AnimatedText>
       </div>
 
-      <div className="text-3xl text-white font-bold">
+      <div className="text-2xl text-white font-semibold">
         {"Our Vision & Values:"}
         <br />
         <div className="font-normal text-sm">
@@ -27,10 +27,10 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="text-3xl text-white font-bold">
+      <div className="text-2xl text-white font-semibold">
         {"Excellence in real estate:"}
         <br />
-        <div className="font-normal text-sm">
+        <div className="font-normal text-xs">
           Sermayakar is not just a real estate it is home to effective
           investments. Here we take into account the market trends, understand
           effective investment plans and build on strong relationships with our
@@ -42,10 +42,10 @@ const AboutUs = () => {
         </div>
       </div>
       <Button
-        className="bg-blue-500 rounded-2xl "
+        className="bg-blue-200 rounded-2xl text-black font-semibold "
         onClick={() => router.push("/contact")}
       >
-        Learn more
+        contact now
       </Button>
       <Blobs />
     </div>

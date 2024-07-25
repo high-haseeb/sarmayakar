@@ -4,12 +4,12 @@ import { usePathname } from "next/navigation";
 import Navbar from "../common/Navbar";
 
 const pageVariants = {
-  initial: { x: "-100vw" },
-  in: {  x: 0 },
-  out: { x: "100vw" },
+  initial: { opacity: 0 },
+  in: { opacity: 1,  },
+  out: { opacity: 0 },
 };
 
-const pageTransition = { type: "tween", duration: 0.3 };
+const pageTransition = { type: "tween", duration: 0.5 };
 
 const AnimatedLayout = ({ children }) => {
   const asPath = usePathname();

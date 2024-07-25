@@ -39,14 +39,29 @@ const config = {
             strokeDasharray: "var(--path-length), var(--path-length)",
           },
         },
+        ripple: {
+          "0%": {
+            width: "0%",
+            height: "0%",
+            opacity: "1",
+            borderRadius: "50%",
+          },
+          "100%": {
+            width: "100vw",
+            height: "100vh",
+            borderRadius: "0",
+            opacity: "1",
+          },
+        },
       },
       animation: {
+        ripple: "ripple 0.5s ease-out",
         expandWidth: "expandWidth 1s ease-in-out forwards",
         fadeInUp: "fadeInUp 0.7s ease-out forwards",
         scroll: "scroll 4s linear infinite",
         slideLeft: "slideLeft 1s ease-in-out forwards",
         slideUp: "slideUp 1s ease-out forwards",
-        draw: 'draw 2s ease-in-out forwards',
+        draw: "draw 2s ease-in-out forwards",
       },
       fontFamily: {
         nexa: ["nexa"],
