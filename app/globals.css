@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#__next {
+  height: 100%;
+}
 @font-face {
   src: url('/fonts/nexa/Nexa-Heavy.ttf') format(truetype);
   font-family: 'nexa';

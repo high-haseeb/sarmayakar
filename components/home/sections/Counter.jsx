@@ -14,7 +14,7 @@ const Counter = ({ target, duration, plus, ...props }) => {
     };
 
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.1, // Adjust the threshold as needed
+      threshold: 0.1,
     });
 
     if (ref.current) {
