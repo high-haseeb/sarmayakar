@@ -47,16 +47,12 @@ const AboutUs = () => {
 const YouTubeEmbed = ({ videoId }) => {
   return (
     <div className="youtube-embed w-full rounded-3xl">
-      <iframe
-        className="w-full rounded-3xl"
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&showinfo=0&modestbranding=1&rel=0`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="Embedded YouTube Video"
-      ></iframe>
+      <video
+        controls
+        className="w-full h-auto rounded-3xl"
+        src="/videos/yt.mp4"
+        type="video/mp4"
+      ></video>
     </div>
   );
 };
