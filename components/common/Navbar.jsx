@@ -17,10 +17,10 @@ const Navbar = () => {
   return (
     <div className="relative">
       <div className="fixed top-10 left-0 w-full h-10 z-50 px-8">
-        <div className="w-full h-full flex items-center justify-between">
+        <div className="w-full h-full flex items-center justify-between ">
           <button onClick={() => setSideMenuOpen((state) => !state)}>
             {sideMenuOpen ? (
-              <Image src="/icons/close.svg" width={50} height={50} alt="close" className="object-cover" />
+              <Image src="/icons/close.svg" width={50} height={50} alt="close" className="object-cover " />
             ) : (
               <Image src="/icons/menu.svg" width={50} height={50} alt="menu" className="object-cover" />
             )}
