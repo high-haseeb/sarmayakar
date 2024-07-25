@@ -9,10 +9,10 @@ const Services = () => {
   return (
     <div className="w-screen h-screen bg-black overflow-hidden relative section z-10  pt-10">
       <div className="w-full h-full text-white px-8 lg:px-10 py-16 flex items-center justify-start  relative flex-col gap-10 z-50">
-        <div className="text-4xl text-white font-bold">
+        <div className="text-4xl text-white font-semibold">
           <span>
             <AnimatedText>
-              <span className="bg-clip-text text-transparent bg-gradient-to-t from-blue-400 to-blue-600">Services</span>
+              <span className="">Services</span>
             </AnimatedText>
             <AnimatedText>we offer</AnimatedText>
           </span>
@@ -47,6 +47,7 @@ const Services = () => {
         </div>
       </div>
       <DotGround />
+
     </div>
   );
 };
@@ -59,7 +60,7 @@ const ServiceCard = ({ imageSrc, title, content, close }) => {
   return (
     <Card
       isPressable
-      className="p-4 bg-black/80 backdrop-blur rounded-3xl"
+      className="p-4 bg-blue-200/10 backdrop-blur-sm rounded-3xl"
       onClick={() => {
         setShow((state) => !state);
         setOpen(title);
