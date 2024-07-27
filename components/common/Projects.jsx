@@ -3,13 +3,16 @@ import React, { useRef } from "react";
 import AnimatedText from "./AnimatedText";
 import { motion, useAnimation, useInView } from "framer-motion";
 import SquigglyLine from "../home/sections/SquigglyLine";
+import { useRouter } from "next/navigation";
+
 
 const Projects = () => {
   const images = [
-    { src: "/images/assets/one.jpeg", title: "Pearl One Tower" },
-    { src: "/images/assets/two.jpeg", title: "Pearl One Couryard" },
-    { src: "/images/pearlTower/front.jpg", title: "ABS Mall" },
+    { src: "/images/assets/one.jpeg", title: "Pearl One Tower" , router:"/projects/pearlone"},
+    { src: "/images/assets/two.jpeg", title: "Pearl One Couryard" , router:"/projects/pearlone"},
+    { src: "/images/pearlTower/front.jpg", title: "ABS Mall" , router:"/projects/pearlone"},
   ];
+  
   return (
     <div className="w-screen h-[200vh] bg-black overflow-hidden relative section z-10  pt-10 ">
       <div className="w-full h-full text-white px-8 lg:px-10 py-16 flex items-center justify-start  relative flex-col gap-10 z-50 mb-40">
@@ -22,7 +25,7 @@ const Projects = () => {
         <AnimatedText>
           <div className="w-full flex items-start justify-start font-semibold text-4xl">Our Projects</div>
         </AnimatedText>
-        <ImageGallery images={images} />
+        <ImageGallery images={images}/>
       </div>
       <div className="section"/>
     </div>
@@ -33,16 +36,17 @@ const ImageGallery = ({ images }) => {
   return (
     <div className="flex flex-col gap-10">
       {images.map((img, index) => (
-        <ImageItem key={index} src={img.src} title={img.title} />
+        <ImageItem key={index} src={img.src} title={img.title} router={img.router} />
       ))}
     </div>
   );
 };
 
-const ImageItem = ({ src, title }) => {
+const ImageItem = ({ src, title,router }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const controls = useAnimation();
+  const Router=useRouter();
 
   React.useEffect(() => {
     if (isInView) {
@@ -69,6 +73,7 @@ const ImageItem = ({ src, title }) => {
         className="w-full object-cover rounded-3xl"
         animate={controls}
         initial={{ scale: 0.8, opacity: 0.5 }}
+        onClick={()=>Router.push(router)}
       />
       <AnimatedText>
         <div className="text-2xl font-semibold">{title}</div>

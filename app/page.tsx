@@ -15,10 +15,10 @@ export default function Home() {
         <main className="parent dark">
           <Hero />
           <Projects/>
-          {/* <VirtualTour/> */}
-          {/* <Services /> */}
-          {/* <AboutUs /> */}
-          {/* <Excellence /> */}
+          <VirtualTour/>
+          <Services />
+          <AboutUs />
+          <Excellence />
           <Contact/>
         </main>
       </NextUIProvider>
