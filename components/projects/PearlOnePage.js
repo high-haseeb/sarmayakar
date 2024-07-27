@@ -98,9 +98,9 @@ function PearlOnePage() {
         </Button>
 
         <ImageGallery images={images} />
-        {/* <div className="min-h-[20vh] w-screen">
+        <div className="min-h-[10vh] w-screen">
 
-        </div> */}
+        </div>
       </div>
     </NextUIProvider>
   );
