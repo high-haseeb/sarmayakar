@@ -23,12 +23,13 @@ function ProjectsPage() {
       <div className="w-full min-h-screen relative text-white">
         <img src="/images/bahria/town.jpg" alt="loading" className="w-full h-screen object-cover z-0" />
         <div className="w-full absolute bottom-0 flex flex-col text-7xl font-semibold gap-2 px-8 py-16 z-20">
+        
           <div className="overflow-hidden">
             <p className={`transition transform duration-500 ${translate}`}>Our</p>
           </div>
           <div className="overflow-hidden">
             <p
-              className={`${translate_2} transition transform duration-500 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400`}
+              className={`${translate_2} h-24 bg-[red] transition transform duration-500 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400`}
             >
               Projects
             </p>

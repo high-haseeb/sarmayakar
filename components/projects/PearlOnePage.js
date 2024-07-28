@@ -10,7 +10,8 @@ import { useRouter } from 'next/navigation';
 function PearlOnePage() {
   const [clicked, setClicked] = useState(false);
   const [services, setServices] = useState(false);
-  const router=useRouter()
+  const router = useRouter();
+
   useEffect(() => {
     if (clicked) {
       setServices(false);
@@ -25,9 +26,29 @@ function PearlOnePage() {
 
   const images = [
     { src: "/images/pearlTower/front.jpg", title: "Pearl One", dis: "" },
-    { src: "/images/pearlTower/pearlOne.png", title: "Luxurious Residency Luxurious", dis: "Experience the epitome of contemporary living at Pearl 1 Tower. Artistically designed 1, 2, 3, and 4-bedroom apartments offer the perfect blend of luxury and modernity. With top-notch amenities and facilities, this high-end development caters to your every need. Nestled in a prime location with convenient accessibility, Pearl 1 Tower combines tranquility with connectivity. Elevate your lifestyle with our commitment to quality, craftsmanship, and smart home technologies." },
-    { src: "/images/pearlTower/Location.jpeg", title: "Site Location", dis: "Plot# 10-18, Iqbal block, Bahria Town Lahore", yes: true },
-    { src: "/images/pearlTower/developers.jpeg", title: "Developers", dis: "ABS Developers, the driving force behind Pearl One Tower, stands out in the industry with a remarkable track record. With over 1 million Sq. Ft. of planned projects and 16+ successful completions, they are known for redefining excellence. Their portfolio has delighted over 1,000 clients, reflecting their commitment to 100% Riba-free and Sharia-compliant developments. Renowned for their punctuality and professionalism, ABS Developers ensures timely delivery of every project. Experience the difference with ABS Developers and join their esteemed clientele." },
+    {
+      src: "/images/pearlTower/pearlOne.png",
+      title: "Luxurious Residency Luxurious",
+      dis: "Experience the epitome of contemporary living at Pearl 1 Tower. Artistically designed 1, 2, 3, and 4-bedroom apartments offer the perfect blend of luxury and modernity. With top-notch amenities and facilities, this high-end development caters to your every need. Nestled in a prime location with convenient accessibility, Pearl 1 Tower combines tranquility with connectivity. Elevate your lifestyle with our commitment to quality, craftsmanship, and smart home technologies."
+    },
+    {
+      src: "/images/pearlTower/Location.jpeg",
+      title: "Site Location",
+      dis: "Plot# 10-18, Iqbal block, Bahria Town Lahore",
+      yes: true,
+      landmark: [
+        { mark: "Eiffel Tower Golf & Country Club" },
+        { mark: "A few mins from Canal Bank Road, Ring Road, Khayaban-e-Jinnah and M2-Motorway" },
+        { mark: "30 mins from Airport" },
+        { mark: "Grand Jamia Mosque" },
+        { mark: "Bahira International hospital" }
+      ]
+    },
+    {
+      src: "/images/pearlTower/developers.jpeg",
+      title: "Developers",
+      dis: "ABS Developers, the driving force behind Pearl One Tower, stands out in the industry with a remarkable track record. With over 1 million Sq. Ft. of planned projects and 16+ successful completions, they are known for redefining excellence. Their portfolio has delighted over 1,000 clients, reflecting their commitment to 100% Riba-free and Sharia-compliant developments. Renowned for their punctuality and professionalism, ABS Developers ensures timely delivery of every project. Experience the difference with ABS Developers and join their esteemed clientele."
+    },
   ];
 
   return (
@@ -39,7 +60,7 @@ function PearlOnePage() {
           }
           viewBox={"0 10 200.63515 210.75214"}
         />
-        <div className="font-bold text-5xl py-8 z-50 flex">PEARL 1 TOWER <Button className="flex-grow  rounded-full" onClick={()=>router.push("/projects/")}><img src="/icons/down.svg" className='w-8 h-8 rotate-90'/></Button></div>
+        <div className="font-bold text-5xl py-8 z-50 flex">PEARL 1 TOWER <Button className="flex-grow  rounded-full" onClick={() => router.push("/projects/")}><img src="/icons/down.svg" className='w-8 h-8 rotate-90' /></Button></div>
         <div className="flex flex-col gap-5 relative mt-2">
           <AnimatedText>
             <p>Welcome to Pearl One Tower, where grandeur meets luxury in the heart of Bahria Town Lahore.</p>
@@ -61,20 +82,20 @@ function PearlOnePage() {
             {clicked ? "LESS" : "READ MORE"}
           </Button>
         </div>
-        
+
         <div className="font-bold mt-7 text-lg relative">
           <AnimatedText>
             AMENITIES & FACILITIES
           </AnimatedText>
         </div>
-        <div className={`flex flex-col text-white text-sm gap-1 font-light mt-2 ${services ? "h-[30rem]" : "h-auto"} overflow-y-scroll relative`}>
+        <div className={`flex flex-col text-white text-sm gap-1 font-light mt-2 py-2 ${services ? "max-h-[20vh]" : "h-auto"} overflow-y-scroll relative`}>
           <AnimatedText>
             <p>Card access to the building</p>
             <p>Private residential lobby</p>
             <p>Complete automation of building</p>
           </AnimatedText>
           {services && (
-            <>
+            <div className='h-[20vh] overflow-y-scroll'>
               <p>Smart elevators</p>
               <p>Largest top roof garden in BTL</p>
               <p>Mosque</p>
@@ -87,7 +108,7 @@ function PearlOnePage() {
               <p>Secure Private Parking</p>
               <p>Rent-a-car facilities</p>
               <img src='/icons/down.svg' alt='scroll down' className='w-10 h-10 bottom-[12%] right-10 absolute animate-bounce object-cover' />
-            </>
+            </div>
           )}
         </div>
         <Button
@@ -99,7 +120,6 @@ function PearlOnePage() {
 
         <ImageGallery images={images} />
         <div className="min-h-[10vh] w-screen">
-
         </div>
       </div>
     </NextUIProvider>
@@ -112,13 +132,13 @@ const ImageGallery = ({ images }) => {
   return (
     <div className="flex flex-col gap-10 mt-20">
       {images.map((img, index) => (
-        <ImageItem key={index} src={img.src} title={img.title} dis={img.dis} yes={img.yes} />
+        <ImageItem key={index} src={img.src} title={img.title} dis={img.dis} yes={img.yes} landmark={img.landmark} />
       ))}
     </div>
   );
 };
 
-const ImageItem = ({ src, title, dis, yes }) => {
+const ImageItem = ({ src, title, dis, yes, landmark }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const controls = useAnimation();
@@ -143,7 +163,7 @@ const ImageItem = ({ src, title, dis, yes }) => {
     <div className="flex flex-col gap-2 items-center justify-center z-10">
       <motion.div className='relative'>
         {yes && (
-          <a target='_blank' href='https://www.google.com/maps/place/95GP%2BP28,+Sector+C+Commercial+Area+Sector+C+Bahria+Town,+Lahore,+Punjab/@31.379499,74.185851,14z/data=!4m5!3m4!1s0x3918ff8efbab3c69:0x75ec969d8e728499!8m2!3d31.3767875!4d74.1850781?hl=en-PK&entry=ttu' className='absolute text-3xl w-[90%] flex items-center justify-center text-white p-2 rounded-md top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
+          <a target='_blank' href='https://www.google.com/maps/place/Pearl+One+Tower/@31.3628474,74.1829776,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipN2Wr24mvxL1QaXV7bCnfw336kzWAHaQ2yAm_iD!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipN2Wr24mvxL1QaXV7bCnfw336kzWAHaQ2yAm_iD%3Dw203-h270-k-no!7i3024!8i4032!4m7!3m6!1s0x391855cdf7793259:0xb8902d1c192702d!8m2!3d31.3630395!4d74.1829705!10e5!16s%2Fg%2F11nfp7v8wg?entry=ttu' className='absolute text-3xl w-[90%] flex items-center justify-center text-white p-2 rounded-md top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
             View On Map
             <img src='/icons/location-svgrepo-com.svg' className="w-8 h-8 ml-2" />
           </a>
@@ -165,6 +185,18 @@ const ImageItem = ({ src, title, dis, yes }) => {
           {dis}
         </div>
       </AnimatedText>
+      {landmark && (
+        <AnimatedText>
+          <div className='flex flex-col font-bold'>
+            Land Marks
+            {landmark.map((value, index) => (
+              <div className="font-light" key={index}>
+                {value.mark}
+              </div>
+            ))}
+          </div>
+        </AnimatedText>
+      )}
     </div>
   );
 };
