@@ -16,6 +16,12 @@ const config = {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },
+
+        "slide-left": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+
         fadeInUp: {
           "0%": { transform: "translateY(50px)" },
           "100%": { transform: "translateY(0)" },
@@ -28,6 +34,7 @@ const config = {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-25%)" },
         },
+
         slideUp: {
           "0%": { transform: "translateY(100%)" },
           "100%": { transform: "translateY(0%)" },
@@ -63,6 +70,7 @@ const config = {
         slideLeft: "slideLeft 1s ease-in-out forwards",
         slideUp: "slideUp 1s ease-out forwards",
         draw: "draw 2s ease-in-out forwards",
+        "slide-left": "slide-left 8s linear infinite",
       },
       fontFamily: {
         nexa: ["nexa"],

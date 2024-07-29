@@ -1,9 +1,9 @@
-'use client';
-import Image from 'next/image';
-import { useState } from 'react';
-import AnimatedText from './AnimatedText';
-import SquigglyLine from '../home/sections/SquigglyLine';
-import { useRouter } from 'next/navigation';
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import SquigglyLine from "../home/sections/SquigglyLine";
+import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/button";
 
 const Navbar = () => {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
@@ -25,7 +25,9 @@ const Navbar = () => {
               <Image src="/icons/menu.svg" width={50} height={50} alt="menu" className="object-cover" />
             )}
           </button>
-          <Image src="/logos/logo.png" width={50} height={50} alt="sermayakar logo" className="object-cover" />
+          <button onClick={() => router.push("/")}>
+            <Image src="/logos/logo.png" width={50} height={50} alt="sermayakar logo" className="object-cover" />
+          </button>
         </div>
       </div>
       <div
@@ -37,22 +39,46 @@ const Navbar = () => {
           }
           viewBox={"80 0 112.27184 297.69135"}
         />
-        <div className="w-full h-full px-8 py-16 pt-40 flex flex-col items-center justify-start relative">
-          <AnimatedText>
-            <div className="text-5xl mb-4 font-semibold text-black">sermayakar</div>
-          </AnimatedText>
-          <AnimatedText>
-            <button onClick={() => handleNavigation('/')}><div className="text-4xl font-semibold text-black">Home</div></button>
-          </AnimatedText>
-          <AnimatedText>
-            <button onClick={() => handleNavigation('/about')}><div className="text-4xl font-semibold text-black">About Us</div></button>
-          </AnimatedText>
-          <AnimatedText>
-            <button onClick={() => handleNavigation('/projects')}><div className="text-4xl font-semibold text-black">Projects</div></button>
-          </AnimatedText>
-          <AnimatedText>
-            <button onClick={() => handleNavigation('/contact')}><div className="text-4xl font-semibold text-black">Contact</div></button>
-          </AnimatedText>
+
+        <div className="w-full h-full px-8 py-16 pt-40 flex flex-col items-start justify-start relative">
+          <div className="text-5xl mb-4 font-semibold text-black">sermayakar</div>
+          <button onClick={() => handleNavigation("/")}>
+            <div className="text-4xl font-semibold text-black">Home</div>
+          </button>
+          <button onClick={() => {
+
+              handleNavigation("/");
+              const section = document.getElementById("about");
+              section.scrollIntoView({ behavior: "smooth" });
+          }}>
+            <div className="text-4xl font-semibold text-black">About Us</div>
+          </button>
+          <button onClick={() => handleNavigation("/projects")}>
+            <div className="text-4xl font-semibold text-black">Projects</div>
+          </button>
+          <button
+            onClick={() => {
+              handleNavigation("/");
+              const section = document.getElementById("contact");
+              section.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <div className="text-4xl font-semibold text-black">Contact</div>
+          </button>
+
+          <div className="w-full flex flex-col items-end gap-4">
+            <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0" onClick={() => router.push("/projects/pearlone")}>
+              <Image src={"/images/assets/one.jpeg"} width={1080} height={720} className="w-full h-auto object-cover " />
+            </Button>
+
+            <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0 animate-slideLeft" onClick={() => router.push("/projects/pearlone")}>
+              <Image src={"/images/assets/two.jpeg"} width={1080} height={720} className="object-cover h-full w-full " />
+            </Button>
+
+            <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0" onClick={() => router.push("/projects/pearlone")}>
+              <Image src={"/images/pearlTower/front.jpg"} width={1080} height={720} className="bg-white object-cover " />
+            </Button>
+          </div>
         </div>
       </div>
     </div>

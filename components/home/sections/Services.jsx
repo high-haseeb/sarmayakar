@@ -8,6 +8,7 @@ const Services = () => {
   const [open, setOpen] = useState("Offer property");
   return (
     <div className="w-screen h-screen bg-black overflow-hidden relative section z-10  pt-10">
+      <div className="w-full h-1/2 absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
       <div className="w-full h-full text-white px-8 lg:px-10 py-16 flex items-center justify-start  relative flex-col gap-10 z-50">
         <div className="text-4xl text-white font-semibold">
           <span>

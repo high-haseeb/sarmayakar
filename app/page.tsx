@@ -7,6 +7,8 @@ import Services from "@/components/home/sections/Services";
 import { NextUIProvider } from "@nextui-org/react";
 import AnimatedLayout from "@/components/home/AnimatedLayout";
 import Projects from "@/components/common/Projects";
+import Chose from "@/components/common/Chose";
+import Testimonial from "@/components/common/Testimonial";
 
 export default function Home() {
   return (
@@ -18,7 +20,9 @@ export default function Home() {
           <VirtualTour/>
           <Services />
           <AboutUs />
+          <Chose/>
           <Excellence />
+          <Testimonial/>
           <Contact/>
         </main>
       </NextUIProvider>

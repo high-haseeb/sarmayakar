@@ -39,9 +39,9 @@ html, body {
   scroll-snap-type: y mandatory;
 }
 
-.section {
-  scroll-snap-align: start;
-}
+/* .section { */
+  /* scroll-snap-align: start; */
+/* } */
 
 @tailwind utilities;
 
