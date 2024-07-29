@@ -32,7 +32,7 @@ html, body {
 
 
 
-.parent {
+/* .parent {
   overflow-y: scroll;
   height: 100vh;
   scroll-snap-points-y: repeat(100vh);
@@ -41,7 +41,7 @@ html, body {
 
 .section {
   scroll-snap-align: start;
-}
+} */
 
 @tailwind utilities;
 

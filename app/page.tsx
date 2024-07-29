@@ -7,7 +7,7 @@ import Services from "@/components/home/sections/Services";
 import { NextUIProvider } from "@nextui-org/react";
 import AnimatedLayout from "@/components/home/AnimatedLayout";
 import Projects from "@/components/common/Projects";
-
+import Footer from "@/components/common/Footer"
 export default function Home() {
   return (
     <AnimatedLayout>
@@ -20,6 +20,7 @@ export default function Home() {
           <AboutUs />
           <Excellence />
           <Contact/>
+          <Footer/>
         </main>
       </NextUIProvider>
     </AnimatedLayout>
