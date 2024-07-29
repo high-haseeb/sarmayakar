@@ -8,7 +8,9 @@ import React, { useRef } from "react";
 const VirtualTour = () => {
   return (
     <div className="bg-black w-screen h-screen overflow-hidden text-white px-8 lg:px-10 py-24 flex items-start justify-between section relative flex-col backdrop-blur ">
-      <div className="w-full">
+      <div className="w-full h-1/2 absolute top-0 left-0 bg-gradient-to-b from-black to-transparent z-10"></div>
+      <div className="w-full h-1/3 absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+      <div className="w-full z-20">
         <AnimatedText>
           <div className="flex w-full font-semibold text-5xl items-center justify-start">Virtual tour</div>
         </AnimatedText>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import AnimatedText from "@/components/common/AnimatedText";
 import SquigglyLine from "@/components/home/sections/SquigglyLine";
 import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/button";
 
 const Hero = () => {
   const router = useRouter();
@@ -40,12 +41,21 @@ const Hero = () => {
           </div>
         </button>
       </div>
+
       <div className="w-full flex flex-col items-end gap-4">
-        <Image src={"/images/assets/one.jpeg"} width={1080} height={720} className="h-20 w-2/3 rounded-[3rem] bg-white object-cover " />
-        <div className="animate-slideLeft h-20 w-2/3 ">
-          <Image src={"/images/assets/two.jpeg"} width={1080} height={720} className="object-cover h-full w-full rounded-[3rem]" />
-        </div>
-        <Image src={"/images/pearlTower/front.jpg"} width={1080} height={720} className="h-20 w-2/3 rounded-[3rem] bg-white object-cover " />
+        <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0" onClick={() => router.push("/projects/pearlone")}>
+          <Image src={"/images/assets/one.jpeg"} width={1080} height={720} className="w-full h-auto object-cover " />
+        </Button>
+
+        <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0 animate-slideLeft" onClick={() => router.push("/projects/pearlone")}>
+
+          <Image src={"/images/assets/two.jpeg"} width={1080} height={720} className="object-cover h-full w-full " />
+
+        </Button>
+
+        <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0" onClick={() => router.push("/projects/pearlone")}>
+        <Image src={"/images/pearlTower/front.jpg"} width={1080} height={720} className="bg-white object-cover " />
+        </Button>
       </div>
 
       <div className="w-full flex">
