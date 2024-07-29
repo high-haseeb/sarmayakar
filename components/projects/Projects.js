@@ -1,44 +1,59 @@
-
-"use client"
-import Projects from "@/components/common/Projects";
-import { useState,useEffect } from "react";
-import Contact from "../common/Contact";
+"use client";
+import Image from "next/image";
+import AnimatedText from "@/components/common/AnimatedText";
+import SquigglyLine from "@/components/home/sections/SquigglyLine";
+import { useRouter } from "next/navigation";
+import { Button } from "@nextui-org/button";
 
 function ProjectsPage() {
-  const [translate, setTranslate] = useState("translate-y-12 opacity-0");
-  const [translate_2, setTranslate_2] = useState("translate-y-12 opacity-0");
-  const delay = 200;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setTranslate("translate-y-0 opacity-100");
-      setTimeout(() => {
-        setTranslate_2("translate-y-0 opacity-100");
-      }, delay);
-    }, delay);
-  }, []);
-
+  const router = useRouter();
   return (
-    <div className="flex flex-col w-screen h-auto overflow-hidden">
-      <div className="w-full min-h-screen relative text-white">
-        <img src="/images/bahria/town.jpg" alt="loading" className="w-full h-screen object-cover z-0" />
-        <div className="w-full absolute bottom-0 flex flex-col text-7xl font-semibold gap-2 px-8 py-16 z-20">
-        
-          <div className="overflow-hidden">
-            <p className={`transition transform duration-500 ${translate}`}>Our</p>
-          </div>
-          <div className="overflow-hidden">
-            <p
-              className={`${translate_2} h-24 bg-[red] transition transform duration-500 font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400`}
-            >
-              Projects
-            </p>
+    <div className="bg-black w-screen h-screen overflow-hidden text-white px-8 lg:px-10 py-16 flex items-center justify-around section relative flex-col">
+      <SquigglyLine
+        path={
+          "m 0,0 54.206145,36.250999 c 5.384896,3.601212 10.785629,7.331842 15.005738,12.24677 4.220109,4.914928 7.167106,11.016426 7.808903,17.462659 0.641798,6.446234 -1.060122,13.066679 -4.573685,18.50917 -3.513563,5.442491 -8.708909,9.650774 -14.404977,12.736328 -5.696064,3.085534 -11.889178,5.114134 -17.956686,7.383714 -6.067509,2.26958 -12.161451,4.87955 -16.985682,9.20302 -2.412115,2.16174 -4.473969,4.7502 -5.815754,7.69826 -1.341786,2.94805 -1.940902,6.26872 -1.456329,9.47131 0.484573,3.2026 2.097218,6.26793 4.631269,8.28535 1.267026,1.00871 2.750706,1.74982 4.326545,2.12343 1.57584,0.3736 3.242441,0.37632 4.811283,-0.0257 1.728046,-0.44278 3.314968,-1.36861 4.633412,-2.57023 1.318444,-1.20162 2.375003,-2.67348 3.200281,-4.25497 1.650556,-3.16298 2.374376,-6.71459 3.054834,-10.21684 0.680458,-3.50225 1.351792,-7.05724 2.912549,-10.26548 0.780379,-1.60412 1.783174,-3.11055 3.04965,-4.36682 1.266475,-1.25628 2.803254,-2.2577 4.503607,-2.79714 2.121827,-0.67315 4.451249,-0.60365 6.573235,0.069 2.121985,0.67264 4.037804,1.93146 5.597331,3.5199 3.119055,3.17689 4.756652,7.5469 5.556685,11.92652 0.800033,4.37962 0.844602,8.85722 1.250977,13.29072 0.406376,4.43351 1.210113,8.93095 3.377254,12.81999 1.875126,3.365 4.716085,6.14179 7.971089,8.20196 3.255005,2.06017 6.916812,3.42486 10.667985,4.30125 7.502345,1.75276 15.296651,1.58051 22.991371,1.96625 7.69471,0.38574 15.6048,1.41736 22.27491,5.27314 3.33505,1.92789 6.30106,4.55945 8.36222,7.81383 2.06116,3.25438 3.18211,7.14832 2.87095,10.98792 -0.35033,4.32287 -2.46509,8.34203 -5.17731,11.72638 -2.71221,3.38434 -6.02131,6.23079 -9.19968,9.1817 -3.17836,2.95092 -6.28119,6.07325 -8.44202,9.83367 -2.16083,3.76042 -3.3125,8.26552 -2.33549,12.49108 0.96421,4.17017 3.94474,7.70718 7.61473,9.90972 3.66999,2.20253 7.9781,3.16699 12.25266,3.38634 8.54913,0.4387 17.02574,-1.964 25.58526,-1.84314 13.2714,0.18739 26.30228,6.83686 34.24179,17.47309 C 210.92456,269.83941 213.59413,284.22317 210,297"
+        }
+        viewBox={"0 10 200.63515 210.75214"}
+      />
+      <div className="text-3xl font-semibold flex items-end justify-end w-full ">
+        <div className="overflow-y-hidden w-full flex items-end justify-end">
+          <div className="w-1/2 text-left leading-[2rem] flex flex-col items-center justify-center">
+            <AnimatedText>
+              Your <br />
+            </AnimatedText>
+            <AnimatedText>
+              trusted <br />
+            </AnimatedText>
+            <AnimatedText>
+              real estate <br />
+            </AnimatedText>
+            <AnimatedText>partners</AnimatedText>
           </div>
         </div>
-        <div className="w-full h-1/2 bg-gradient-to-t from-black to-transparent absolute bottom-0 z-10"></div>
       </div>
-      <Projects/>
-      <Contact/>
+      <div className="text-5xl font-semibold z-10 flex items-start justify-start w-full flex-col">
+        <AnimatedText>
+          <div>our projects</div>
+        </AnimatedText>
+      </div>
+
+      <div className="w-full flex flex-col items-end gap-4">
+        <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0" onClick={() => router.push("/projects/pearlone")}>
+          <Image src={"/images/assets/one.jpeg"} width={1080} height={720} className="w-full h-auto object-cover " />
+        </Button>
+
+        <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0 animate-slideLeft" onClick={() => router.push("/projects/pearlone")}>
+          <Image src={"/images/assets/two.jpeg"} width={1080} height={720} className="object-cover h-full w-full " />
+        </Button>
+
+        <Button className="h-20 w-2/3 rounded-[3rem] bg-white p-0 m-0" onClick={() => router.push("/projects/pearlone")}>
+          <Image src={"/images/pearlTower/front.jpg"} width={1080} height={720} className="bg-white object-cover " />
+        </Button>
+      </div>
+
+      <div className="w-full flex">
+        <Image src={"/icons/down.svg"} width={90} height={80} className="h-10 w-auto rounded-[3rem] object-cover animate-bounce" />
+      </div>
     </div>
   );
 }

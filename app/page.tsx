@@ -6,6 +6,7 @@ import Contact from "@/components/common/Contact";
 import Services from "@/components/home/sections/Services";
 import { NextUIProvider } from "@nextui-org/react";
 import AnimatedLayout from "@/components/home/AnimatedLayout";
+import Navbar from "@/components/common/Navbar"
 import Projects from "@/components/common/Projects";
 import Footer from "@/components/common/Footer"
 import Chose from "@/components/common/Chose";
@@ -14,6 +15,7 @@ import Testimonial from "@/components/common/Testimonial";
 export default function Home() {
   return (
     <AnimatedLayout>
+      <Navbar/>
       <NextUIProvider>
         <main className="parent dark">
           <Hero />

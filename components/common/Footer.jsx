@@ -7,10 +7,6 @@ const Footer = () => {
     <footer className="bg-black text-white text-center w-screen h-auto py-16 px-8">
       <div className="mb-6 ">
         <div className=" font-bold flex items-end justify-start text-3xl">Sermaykar</div>
-       
-        <Link href="/" className="flex items-center justify-center mt-4">
-          GET DIRECTIONS <span className="ml-2"><img src="/icons/down.svg" alt="loading" className='-rotate-90 w-5 h-5 object-cover' /></span>
-        </Link>
       </div>
       <div className="mb-6">
         <h2 className="text-lg font-bold">Join Our Social Community</h2>
@@ -20,10 +16,6 @@ const Footer = () => {
           <Link href="#" target="_blank" ><img src="/icons/social/ms.svg" alt="facebook"  className='object-cover w-9 h-9 fill-white'/></Link>
           <Link href="#" target="_blank" ><img src="/icons/social/wa.svg" alt="facebook"  className='object-cover w-9 h-9 fill-white'/></Link>
           <Link href="#" target="_blank" ><img src="/icons/social/ig.svg" alt="facebook"  className='object-cover w-10 h-10 fill-white'/></Link>
-
-
-
-        
         </div>
       </div>
       <div className="mb-6 flex flex-col gap-2">

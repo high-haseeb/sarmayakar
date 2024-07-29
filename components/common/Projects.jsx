@@ -8,9 +8,9 @@ import { Card } from "@nextui-org/react";
 
 const Projects = () => {
   const images = [
-    { src: "/images/assets/two.jpeg", title: "Pearl One Tower", router: "/projects/pearlone", done: "completed" },
-    { src: "/images/assets/one.jpeg", title: "Pearl One Couryard", router: "/projects/courtyard", done: "in process" },
-    { src: "/images/abs/ABS-Mall-Residency-2.jpg", title: "ABS Mall", router: "/projects/absmall", done: "under construction" },
+    { src: "/images/assets/two.jpeg", title: "Pearl One Tower", route: "/projects/pearlone", done: "completed" },
+    { src: "/images/assets/one.jpeg", title: "Pearl One Couryard", route: "/projects/courtyard", done: "in process" },
+    { src: "/images/abs/ABS-Mall-Residency-2.jpg", title: "ABS Mall", route: "/projects/absmall", done: "under construction" },
   ];
 
   return (
@@ -38,7 +38,7 @@ const ImageGallery = ({ images }) => {
   return (
     <div className="flex flex-col gap-10">
       {images.map((img, index) => (
-        <ImageItem key={index} src={img.src} title={img.title} router={img.route} done={img.done} />
+        <ImageItem key={index} src={img.src} title={img.title} route={img.route} done={img.done} />
       ))}
     </div>
   );
@@ -67,7 +67,7 @@ const ImageItem = ({ src, title, route, done }) => {
   }, [isInView, controls]);
 
   return (
-    <div className="flex flex-col items-center justify-center z-10 " onClick={() => router.push(route)} >
+    <div className="flex flex-col items-center justify-center z-10 cursor-pointer" onClick={() => router.push(route)} >
       <motion.img
         ref={ref}
         src={src}

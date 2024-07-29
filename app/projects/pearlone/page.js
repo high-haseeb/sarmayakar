@@ -1,11 +1,12 @@
 import React from 'react'
+import AnimatedLayout from "@/components/home/AnimatedLayout";
 import PearlOnePage from '../../../components/projects/PearlOnePage'
 
 function page() {
   return (
-    <div className='w-auto h-auto bg-black'>
+    <AnimatedLayout><div className='w-auto h-auto bg-black'>
       <PearlOnePage/>
-    </div>
+    </div></AnimatedLayout>
   )
 }
 
